@@ -297,6 +297,18 @@ require("lazy").setup({
 		end,
 	},
 
+	{
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup({
+				"css",
+				"scss",
+				"javascript",
+				"html",
+			})
+		end,
+	},
+
 	-- Here is a more advanced example where we pass configuration
 	-- options to `gitsigns.nvim`. This is equivalent to the following Lua:
 	--    require('gitsigns').setup({ ... })
