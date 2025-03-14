@@ -14,4 +14,11 @@ return {
       enable_close = false,
     },
   },
+  ft = {
+    'javascript',
+    'javascriptreact',
+    'typescript',
+    'typescriptreact',
+    'html',
+  },
 }
