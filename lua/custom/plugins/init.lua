@@ -23,6 +23,9 @@ return {
         'css',
         'scss',
         'javascript',
+        'javascriptreact',
+        'typescript',
+        'typescriptreact',
         'html',
       }
     end,

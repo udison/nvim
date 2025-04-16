@@ -161,8 +161,15 @@ vim.opt.scrolloff = 10
 -- See `:help 'confirm'`
 vim.opt.confirm = true
 
+-- set tab size to 4 characters
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
+
+-- Custom keymaps
+vim.keymap.set('i', '<C-r>', '<Esc>o')
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
@@ -746,6 +753,14 @@ require('lazy').setup({
         gdscript_config['cmd'] = { 'ncat', 'localhost', os.getenv 'GDScript_Port' or '6005' }
       end
       require('lspconfig').gdscript.setup(gdscript_config)
+
+      require('lspconfig').graphql.setup {
+        capabilities = capabilities,
+        root_dir = require('lspconfig').util.root_pattern('.graphqlconfig', '.graphqlrc', 'package.json'),
+        flags = {
+          debounce_text_changes = 150,
+        },
+      }
     end,
   },
 
@@ -991,6 +1006,7 @@ require('lazy').setup({
         'gdscript',
         'godot_resource',
         'gdshader',
+        'graphql',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
