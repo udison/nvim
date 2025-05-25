@@ -2,6 +2,7 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
+
 return {
   {
     'ray-x/lsp_signature.nvim',
@@ -52,6 +53,30 @@ return {
       'typescript',
       'typescriptreact',
       'html',
+    },
+  },
+
+  {
+    'olimorris/codecompanion.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-treesitter/nvim-treesitter',
+    },
+    opts = {
+      strategies = {
+        chat = {
+          adapter = 'openai',
+        },
+        inline = {
+          adapter = 'openai',
+        },
+        cmd = {
+          adapter = 'openai',
+        },
+      },
+      opts = {
+        log_level = 'DEBUG',
+      },
     },
   },
 }
